@@ -1,0 +1,21 @@
+1.- Allows the user to login to a welcome page
+url /admin/admin_login.php
+
+
+2.- Display date/time
+In order to do this we create a $_SESSION['user_lastlogin'] in the login.php
+The date function from php to get this value, after this we are able to call this session variable in the index php of the admin section.
+
+http://php.net/manual/en/function.date.php
+
+3.-Account lockout after 3 failed attempts
+
+In order to do this we need to create a field in the table tbl_user in order to save the status of the user by default is null, we also create a SESSION variable in order to save the failed account after 3 attempts. After, we update this field to "blocked", we included a verification of this field in the user login 
+
+4.- Display 3 different welcome message
+
+In the admin index after the user properly login we get the current hour of the day, we use this value for choose the message , "good mourning", "good afternoon", "good night".
+
+/admin/phpscripts/functions.php
+
+we included this file in the index to call the function welcomeTimeMessage() that we created.
